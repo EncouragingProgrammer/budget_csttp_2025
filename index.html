@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budgeting App</title>
+
+  <!-- Link to external stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Load Chart.js from CDN for visualizing budget data -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>Budgeting App</h1>
+
+  <!-- Section for managing budget categories -->
+  <section id="budget-section">
+    <h2>Budget Categories</h2>
+
+    <!-- Form for adding new budget categories -->
+    <form id="budget-form">
+      <!-- Input for the category name (e.g., Groceries, Rent) -->
+      <input type="text" id="category-name" placeholder="Category Name" required>
+
+      <!-- Input for the budgeted amount for that category -->
+      <input type="number" id="budget-amount" placeholder="Budgeted Amount" required>
+
+      <!-- Submit button to add the category -->
+      <button type="submit">Add Category</button>
+    </form>
+
+    <!-- Table to display all categories with budgeted and actual amounts -->
+    <table id="budget-table">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Budgeted</th>
+          <th>Actual</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Table body is dynamically populated by JavaScript -->
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Section for adding transactions -->
+  <section id="transaction-section">
+    <h2>Add Transaction</h2>
+
+    <!-- Form for entering transaction details -->
+    <form id="transaction-form">
+      <!-- Date of transaction -->
+      <input type="date" id="transaction-date" required>
+
+      <!-- Amount spent -->
+      <input type="number" id="transaction-amount" placeholder="Amount" required>
+
+      <!-- Category this transaction belongs to -->
+      <input type="text" id="transaction-category" placeholder="Category" required>
+
+      <!-- Optional: Location of the transaction (e.g., city) -->
+      <input type="text" id="transaction-location" placeholder="Location">
+
+      <!-- Optional: Store or merchant name -->
+      <input type="text" id="transaction-store" placeholder="Store">
+
+      <!-- Optional: Transaction ID (e.g., receipt number or UUID) -->
+      <input type="text" id="transaction-id" placeholder="Transaction ID">
+
+      <!-- Submit button to add the transaction -->
+      <button type="submit">Add Transaction</button>
+    </form>
+  </section>
+
+  <!-- Section for visualizing budget data with a bar chart -->
+  <section id="chart-section">
+    <h2>Budget vs Actual</h2>
+
+    <!-- Chart.js will render the bar chart in this canvas element -->
+    <canvas id="budgetChart"></canvas>
+  </section>
+
+  <!-- Link to external JavaScript file with app logic -->
+  <script src="scripts.js"></script>
+</body>
+</html>
